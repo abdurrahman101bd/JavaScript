@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stopwatch | JS Practice</title>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/digital-7-mono" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container-wrapper">
+      <h1>STOPWATCH</h1>
+      <div class="stopwatch-card">
+        <div id="display" aria-live="polite" aria-atomic="true">00:00:00:00</div>
+        <div class="buttons">
+          <button onclick="start()" id="start" class="btn" aria-label="Start stopwatch">Start</button>
+          <button onclick="stop()" id="stop" class="btn" aria-label="Stop stopwatch">Stop</button>
+          <button onclick="reset()" id="reset" class="btn" aria-label="Reset stopwatch">Reset</button>
+        </div>
+      </div>
+    </div>
+	    <script src="script.js"></script>
+  </body>
+</html>

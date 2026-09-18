@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A clean JavaScript learning project showcase.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>JS Lab | JavaScript Projects</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="#home" class="logo"><span>JS</span></a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+
+      <button id="theme-switch" class="theme-switch" aria-label="Switch to dark mode">
+        <span class="theme-icon" aria-hidden="true">
+          <svg class="moon-icon" viewBox="0 -960 960 960"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Z"/></svg>
+          <svg class="sun-icon" viewBox="0 -960 960 960"><path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/></svg>
+        </span>
+        <span class="theme-label">Dark mode</span>
+      </button>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">JavaScript Learning Lab</span>
+        <h1>Learning JavaScript <span>by building.</span></h1>
+        <p>A growing collection of small JavaScript projects. Every project is a little step forward, a place to practice, break things, fix them, and learn.</p>
+
+        <div class="hero-buttons">
+          <a class="cta-button" href="#projects">Explore Projects</a>
+          <a class="secondary-button" href="#about">About This Lab</a>
+        </div>
+
+        <div class="stats">
+          <div><strong id="project-count">00</strong><span>Projects</span></div>
+          <div><strong>JS</strong><span>Powered</span></div>
+          <div><strong>∞</strong><span>Learning</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="card-header">
+          <div class="window-buttons"><span></span><span></span><span></span></div>
+          <span>learning.js</span>
+        </div>
+
+        <div class="code" id="hero-code" aria-label="Animated code sample"></div>
+
+        <div class="code-output" id="code-output" aria-hidden="true"></div>
+
+        <div class="code-status" id="code-status">
+          <span class="status-dot"></span>
+          <span id="code-status-text">Learning mode active</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="section-heading">
+        <span class="small-title">PROJECT COLLECTION</span>
+        <h2>Small projects. <span>Real progress.</span></h2>
+        <p>Each card is a small project built while learning JavaScript. Click into any one of them to see it live or check out the source.</p>
+      </div>
+
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-content">
+        <span class="small-title">ABOUT THIS LAB</span>
+        <h2>Build it. <span>Learn it.</span></h2>
+        <p>This isn't meant to be a fancy portfolio. It's a visual record of the JavaScript journey—small ideas turned into working projects, one at a time.</p>
+
+        <ul>
+          <li>Practice JavaScript fundamentals</li>
+          <li>Keep every project easy to revisit</li>
+          <li>Track progress through real work</li>
+          <li>Share the collection on GitHub</li>
+        </ul>
+      </div>
+
+      <div class="about-box">
+        <div class="learning-header">
+          <span class="learning-label">MY JAVASCRIPT JOURNEY</span>
+          <span class="learning-live">
+            <span></span> LEARNING
+          </span>
+        </div>
+
+        <div class="learning-content">
+          <div class="learning-icon">{ }</div>
+
+          <h3>Currently Learning</h3>
+          <p>Building my JavaScript skills<br>one concept at a time.</p>
+
+          <div class="learning-list" id="learning-list">
+            <div class="learning-item">
+              <span class="learning-check">✓</span>
+              <span>JavaScript Fundamentals</span>
+            </div>
+
+            <div class="learning-item">
+              <span class="learning-check">✓</span>
+              <span>DOM & Events</span>
+            </div>
+
+            <div class="learning-item">
+              <span class="learning-check">✓</span>
+              <span>Async JavaScript</span>
+            </div>
+
+            <div class="learning-item">
+              <span class="learning-check">✓</span>
+              <span>APIs & Fetch</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="learning-footer">
+          <span>Keep coding.</span>
+          <strong>Keep learning.</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> JS Lab. Built while learning JavaScript.</p>
+    <p class="footer-note">Made with ❤️ & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
