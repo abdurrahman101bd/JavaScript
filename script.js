@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Text Utils",
+    description: "A fast, fully client-side tool to transform your text easily (UPPERCASE, lowercase, Capitalize, Remove Spaces, and quick copying).",
+    thumbnail: "assets/TextUtils.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/TextUtils",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/TextUtils"
+  },{
     title: "TODO APP",
     description: "This project is a secure and interactive To-Do List web app where users can add, edit, delete, and mark tasks as completed.",
     thumbnail: "assets/todo-app.png",
