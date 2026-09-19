@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Tic Tac Toe",
+    description: "A classic two-player Tic Tac Toe game with a modern neon interface. Line up three in a row to win and watch the winning cells come alive with a bouncing animation.",
+    thumbnail: "assets/TicTacToe.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/TicTacToe",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/TicTacToe"
+  },{
     title: "Text Utils",
     description: "A fast, fully client-side tool to transform your text easily (UPPERCASE, lowercase, Capitalize, Remove Spaces, and quick copying).",
     thumbnail: "assets/TextUtils.png",
