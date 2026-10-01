@@ -125,7 +125,7 @@ section { width: min(1150px, 90%); margin: auto; }
 .thumb-placeholder {font: 800 54px "Courier New", monospace;color: var(--primary-color);opacity: .8;}
 .project-body {padding: 22px;display: flex;flex: 1;flex-direction: column;}
 .project-body h3 { font-size: 19px; }
-.project-description {min-height: 48px;margin-top: 10px;color: var(--secondary-text);font-size: 13px;line-height: 1.7;}
+.project-description {min-height: 48px;margin-top: 10px;color: var(--secondary-text);font-size: 13px;line-height: 1.7;display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;}
 .project-description.empty { display: none; }
 .project-actions {display: grid;grid-template-columns: repeat(2, 1fr);gap: 8px;margin-top: 20px;margin-top: auto;padding-top: 20px;}
 .project-button {position: relative;min-height: 44px;display: inline-flex;align-items: center;justify-content: center;gap: 6px;border-radius: 10px;border: 1px solid var(--border-color);background: var(--surface-hover);box-shadow: 0 5px 16px rgba(31, 41, 55, 0.05);color: var(--text-color);font-size: 12px;font-weight: 600;transition: transform 0.2s ease, background-color 0.2s ease,border-color 0.2s ease, color 0.2s ease;}
