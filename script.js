@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Login Form",
+    description: "A modern, fully functional login form built with vanilla HTML, CSS, and JavaScript. Features a theme toggle (light/dark), password visibility toggle, forgot password dialog, sign-up dialog, and success confirmation — all with smooth animations and a clean, responsive UI.",
+    thumbnail: "assets/login-form.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/login-form",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/login-form"
+  },{
     title: "Tic Tac Toe",
     description: "A classic two-player Tic Tac Toe game with a modern neon interface. Line up three in a row to win and watch the winning cells come alive with a bouncing animation.",
     thumbnail: "assets/TicTacToe.png",
