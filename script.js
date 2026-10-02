@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Random Color Generator",
+    description: "A modern, lightweight web app that generates random hex colors with one click — and lets you copy them instantly.",
+    thumbnail: "assets/random-color-generator.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/random-color-generator",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/random-color-generator"
+  },{
     title: "Login Form",
     description: "A modern, fully functional login form built with vanilla HTML, CSS, and JavaScript. Features a theme toggle (light/dark), password visibility toggle, forgot password dialog, sign-up dialog, and success confirmation — all with smooth animations and a clean, responsive UI.",
     thumbnail: "assets/login-form.png",
