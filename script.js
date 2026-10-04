@@ -1,5 +1,23 @@
 const projects = [
   {
+    title: "Month Calendar",
+    description: "A sleek, fully responsive month calendar built with vanilla JavaScript — featuring a dark neon aesthetic, live date rendering, and smooth staggered animations.",
+    thumbnail: "assets/month-calendar.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/month-calendar",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/month-calendar"
+  },{
+    title: "Mini Calendar",
+    description: "A sleek, responsive mini calendar built with vanilla JavaScript — featuring a dark neon aesthetic, live date updates, and smooth animations.",
+    thumbnail: "assets/mini-calendar.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/mini-calendar",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/mini-calendar"
+  },{
+    title: "Digital Clock",
+    description: "A modern, responsive digital clock built with vanilla JavaScript — featuring live weather, dynamic time-based greetings, and neon-themed glow effects.",
+    thumbnail: "assets/digital-clock.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/digital-clock",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/digital-clock"
+  },{
     title: "Random Color Generator",
     description: "A modern, lightweight web app that generates random hex colors with one click — and lets you copy them instantly.",
     thumbnail: "assets/random-color-generator.png",
