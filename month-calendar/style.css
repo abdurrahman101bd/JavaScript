@@ -1,0 +1,59 @@
+:root {
+  --bg: #06080f;
+  --gradient:
+    radial-gradient(circle at 15% 10%, rgba(99, 91, 255, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(255, 59, 92, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.08) 0%, transparent 60%);
+  --accent: #15b7b9;
+  --accent-glow: rgba(21, 183, 185, 0.55);
+  --accent-soft: rgba(21, 183, 185, 0.15);
+  --pink: #ff3b5c;
+  --pink-glow: rgba(255, 59, 92, 0.5);
+  --weekend: #ff8a3d;
+}
+* {margin: 0;padding: 0;box-sizing: border-box;}
+html, body {min-height: 100%;width: 100%;overflow-x: hidden;}
+body {font-family: "Orbitron", sans-serif;min-height: 100vh;min-height: 100dvh;padding: 20px;background-color: var(--bg);background-image: var(--gradient);background-attachment: fixed;display: flex;justify-content: center;align-items: center;}
+.glow-orb {position: fixed;border-radius: 50%;filter: blur(80px);opacity: 0.35;z-index: 0;pointer-events: none;animation: float 12s ease-in-out infinite;}
+.orb-1 {width: clamp(180px, 40vw, 300px);height: clamp(180px, 40vw, 300px);background: var(--accent);top: -60px; left: -60px;}
+.orb-2 {width: clamp(200px, 45vw, 350px);height: clamp(200px, 45vw, 350px);background: var(--pink);bottom: -80px; right: -80px;animation-delay: -6s;}
+@keyframes float {0%, 100% { transform: translate(0, 0); }50% { transform: translate(30px, -30px); }}
+.container {position: relative;z-index: 1;width: 100%;max-width: 500px;display: flex;justify-content: center;align-items: center;}
+.calendar {width: 100%;background: rgba(10, 15, 28, 0.85);backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px);border-radius: 22px;overflow: hidden;border: 1px solid rgba(255, 255, 255, 0.06);box-shadow:0 20px 50px rgba(0, 0, 0, 0.7),inset 0 1px 0 rgba(255, 255, 255, 0.06);animation: cardIn 0.7s cubic-bezier(0.22, 1, 0.36, 1);}
+@keyframes cardIn {from { opacity: 0; transform: translateY(20px) scale(0.96); }to { opacity: 1; transform: translateY(0) scale(1); }}
+.month {width: 100%;padding: clamp(18px, 4vw, 26px) 20px;background: linear-gradient(135deg, var(--accent), #0d8a8c);box-shadow: 0 0 25px var(--accent-glow);text-align: center;position: relative;overflow: hidden;}
+.month::before {content: "";position: absolute;top: 0; left: -100%;width: 100%; height: 100%;background: linear-gradient(90deg,transparent,rgba(255, 255, 255, 0.25),transparent);animation: shine 3.5s ease-in-out infinite;}
+@keyframes shine {0% { left: -100%; }50%  left: 100%; }100% { left: 100%; }}
+.month h1 {font-size: clamp(20px, 4.5vw, 26px);font-weight: 700;letter-spacing: 3px;text-transform: uppercase; color: #06080f;margin-bottom: 4px;text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);}
+.month p {font-size: clamp(11px, 2vw, 13px);color: rgba(255, 255, 255, 0.85);letter-spacing: 1px;font-weight: 500;}
+.weekdays {display: grid;grid-template-columns: repeat(7, 1fr);padding: 14px 8px 6px;gap: 4px;}
+.weekdays div {font-size: clamp(10px, 1.8vw, 12px);font-weight: 700;letter-spacing: 1px;text-transform: uppercase;color: var(--accent);text-align: center;padding: 6px 0;text-shadow: 0 0 8px var(--accent-glow);}
+.weekdays .weekend {color: var(--weekend);text-shadow: 0 0 8px rgba(255, 138, 61, 0.5);}
+.days {display: grid;grid-template-columns: repeat(7, 1fr);padding: 6px 12px 20px;gap: 6px;}
+.days div {aspect-ratio: 1 / 1;display: flex;justify-content: center;align-items: center;font-size: clamp(12px, 2vw, 14px);font-weight: 500;color: #d1d5db;border-radius: 12px;cursor: default;transition:transform 0.25s ease,background 0.25s ease,color 0.25s ease,box-shadow 0.25s ease;animation: dayIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) backwards;}
+@keyframes dayIn {from { opacity: 0; transform: translateY(6px) scale(0.9); }to { opacity: 1; transform: translateY(0) scale(1); }}
+.days div:hover:not(.empty):not(.today) {background: var(--accent-soft);color: #fff;transform: translateY(-2px);box-shadow: 0 6px 14px rgba(21, 183, 185, 0.2);cursor: pointer;}
+.days .empty {pointer-events: none;opacity: 0.15;}
+.days .today {background: var(--accent);color: #06080f;font-weight: 800;box-shadow:0 0 0 2px rgba(21, 183, 185, 0.3),0 0 20px var(--accent-glow),0 0 40px rgba(21, 183, 185, 0.3);animation: pulse 2.5s ease-in-out infinite;}
+.days div.weekend-day {color: #fbbf8f;}
+@keyframes pulse {
+  0%, 100% {box-shadow:0 0 0 2px rgba(21, 183, 185, 0.3),0 0 20px var(--accent-glow),0 0 40px rgba(21, 183, 185, 0.3);}
+  50% {box-shadow:0 0 0 3px rgba(21, 183, 185, 0.4),0 0 30px var(--accent-glow),0 0 60px rgba(21, 183, 185, 0.5);}
+}
+
+@media (hover: hover) {
+  .calendar {transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),box-shadow 0.4s ease;}
+  .calendar:hover {transform: translateY(-4px);box-shadow:0 30px 60px rgba(0, 0, 0, 0.8),0 0 40px rgba(21, 183, 185, 0.12),inset 0 1px 0 rgba(255, 255, 255, 0.08);}
+}
+@media (max-width: 480px) {
+  body {padding: 12px;padding-top: 30px;align-items: flex-start;}
+  .calendar {border-radius: 18px;}
+  .days {padding: 4px 8px 16px;gap: 4px;}
+  .days div {border-radius: 10px;}
+  .weekdays {padding: 12px 6px 4px;}
+}
+@media (max-width: 360px) {
+  .month h1 {font-size: 18px;letter-spacing: 2px;}
+  .days div {font-size: 11px;}
+  .weekdays div {font-size: 9px;letter-spacing: 0.5px;}
+}
