@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/digital-7-mono" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>Digital Clock</title>
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <main>
+    <div class="header">
+      <div class="brand">
+        <div class="logo">CL</div>
+        <div>
+          <div class="title">Digital Clock</div>
+          <div class="subtitle" id="greeting">Good morning</div>
+        </div>
+      </div>
+      <div class="toggle">
+        <div class="btn active" id="btn-12">12 hr</div>
+        <div class="btn" id="btn-24">24 hr</div>
+      </div>
+    </div>
+
+    <div class="display">
+      <div class="time-wrap">
+        <div class="time">
+          <span id="hh">00</span><span class="colon">:</span><span id="mm">00</span><span class="colon">:</span><span id="ss">00</span>
+        </div>
+        <div class="ampm" id="ampm">AM</div>
+      </div>
+      <div class="meta">
+        <div id="date">October 4, 2026</div>
+        <div id="day">Sunday</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>Powered by JavaScript</div>
+      <div id="year">© 2026</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
