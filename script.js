@@ -1,5 +1,17 @@
 const projects = [
   {
+    title: "Toast Notification",
+    description: "A sleek, fully responsive toast notification system built with vanilla JavaScript — featuring 4 notification types, animated progress bars, sound effects, and a dark neon aesthetic.",
+    thumbnail: "assets/toast-notification.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/toast-notification",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/toast-notification"
+  },{
+    title: "OTP Verification",
+    description: "A sleek, fully responsive OTP verification form built with vanilla JavaScript — featuring sequential input flow, animated loading & success states, and a dark neon aesthetic.",
+    thumbnail: "assets/otp-verification.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/otp-verification",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/otp-verification"
+  },{
     title: "Month Calendar",
     description: "A sleek, fully responsive month calendar built with vanilla JavaScript — featuring a dark neon aesthetic, live date rendering, and smooth staggered animations.",
     thumbnail: "assets/month-calendar.png",
