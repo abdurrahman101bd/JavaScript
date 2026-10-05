@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTP Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <main class="otp-card">
+    <div class="icon-wrap">
+      <div class="shield-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8H20C20.5523 8 21 8.44772 21 9V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V9C3 8.44772 3.44772 8 4 8H6V7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7V8ZM11 15.7324V18H13V15.7324C13.5978 15.3866 14 14.7403 14 14C14 12.8954 13.1046 12 12 12C10.8954 12 10 12.8954 10 14C10 14.7403 10.4022 15.3866 11 15.7324ZM16 8V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V8H16Z"/></svg>
+      </div>
+    </div>
+
+    <h1>Verify Your Account</h1>
+    <p class="subtitle">We've sent a 6-digit code to<br/><span class="contact">user@example.com</span></p>
+
+    <form id="otp-form" autocomplete="off">
+      <div class="otp-wrap" id="otp-wrap">
+        <div class="otp-inputs" id="otp-inputs">
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-index="0"/>
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-index="1" />
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-index="2" />
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-index="3" />
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-index="4" />
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-index="5" />
+        </div>
+
+        <div class="otp-loader" id="otp-loader">
+          <div class="spinner"></div>
+          <p>Verifying your code...</p>
+        </div>
+
+        <div class="otp-success" id="otp-success">
+          <div class="checkmark-circle">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>Verified Successfully!</p>
+        </div>
+      </div>
+
+      <button type="submit" class="verify-btn" id="verify-btn" disabled>Verify Code</button>
+    </form>
+
+    <div class="resend-wrap" id="resend-wrap">
+      <span>Didn't receive the code?</span>
+      <button type="button" class="resend-btn" id="resend-btn" disabled>Resend in <span id="timer">30</span>s</button>
+    </div>
+
+    <div class="footer-note">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px;"><path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 15.11 15.72 18.78 12 19.93V12H5V6.3L12 3.19V11.99Z"/></svg>
+        Secured with end-to-end encryption
+      </span>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
