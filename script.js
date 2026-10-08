@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Lorem Ipsum Generator",
+    description: "A minimalist Lorem Ipsum generator built with vanilla HTML, CSS & JavaScript.",
+    thumbnail: "assets/lorem-ipsum-generator.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/lorem-ipsum-generator",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/lorem-ipsum-generator"
+  },{
     title: "Toast Notification",
     description: "A sleek, fully responsive toast notification system built with vanilla JavaScript — featuring 4 notification types, animated progress bars, sound effects, and a dark neon aesthetic.",
     thumbnail: "assets/toast-notification.png",
