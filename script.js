@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Profile Card",
+    description: "A modern, fully interactive profile card built with pure HTML, CSS, vanilla JavaScript — no frameworks, no libraries. Packed with theme switching, dark mode, 3D tilt, drag-to-color, confetti, and more.",
+    thumbnail: "assets/profile-card.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/profile-card",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/profile-card"
+  },{
     title: "Lorem Ipsum Generator",
     description: "A minimalist Lorem Ipsum generator built with vanilla HTML, CSS & JavaScript.",
     thumbnail: "assets/lorem-ipsum-generator.png",
