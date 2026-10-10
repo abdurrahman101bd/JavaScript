@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Rock Paper Scissors",
+    description: "A sleek, fully responsive Rock Paper Scissors game built with vanilla JavaScript — featuring live score tracking, animated result badges, custom SVG weapons, and a dark neon aesthetic.",
+    thumbnail: "assets/rock-paper-scissors.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/rock-paper-scissors",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/rock-paper-scissors"
+  },{
     title: "Roll The Dice",
     description: "A sleek, fully responsive dice roller built with vanilla JavaScript — featuring dual dice shake animation, glowing custom SVG faces, and a dark neon aesthetic.",
     thumbnail: "assets/roll-the-dice.png",

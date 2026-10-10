@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <div class="container">
+    <h1 class="title">Rock Paper Scissors</h1>
+    <p class="subtitle">Best of luck — pick your weapon</p>
+
+    <!-- Scores -->
+    <div class="scores">
+      <div class="score-card user-score">
+        <span class="score-label">You</span>
+        <span class="score-value" id="user_score">0</span>
+      </div>
+      <div class="score-card comp-score">
+        <span class="score-label">Computer</span>
+        <span class="score-value" id="computer_score">0</span>
+      </div>
+    </div>
+
+    <!-- Weapons -->
+    <div class="weapons">
+      <button class="weapon-btn" data-choice="rock" aria-label="Rock">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 2c-.55 0-1 .45-1 1v7H7.5c-.83 0-1.5.67-1.5 1.5S6.67 13 7.5 13H12v1H5.5c-.83 0-1.5.67-1.5 1.5S4.67 17 5.5 17H12v1H8.5c-.83 0-1.5.67-1.5 1.5S7.67 21 8.5 21H15c3.31 0 6-2.69 6-6v-2c0-1.1-.9-2-2-2h-2V6c0-1.1-.9-2-2-2h-2V3c0-.55-.45-1-1-1z"/>
+        </svg>
+        <span>Rock</span>
+      </button>
+
+      <button class="weapon-btn" data-choice="paper" aria-label="Paper">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+        </svg>
+        <span>Paper</span>
+      </button>
+
+      <button class="weapon-btn" data-choice="scissor" aria-label="Scissors">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3h-3z"/>
+        </svg>
+        <span>Scissors</span>
+      </button>
+    </div>
+
+    <!-- Choices & Result -->
+    <div class="details">
+      <div class="choices">
+        <div class="choice-item">
+          <span class="choice-label">You</span>
+          <span class="choice-value" id="user_choice">—</span>
+        </div>
+        <div class="choice-item">
+          <span class="choice-label">Computer</span>
+          <span class="choice-value" id="comp_choice">—</span>
+        </div>
+      </div>
+
+      <div id="result" class="result-badge">Pick a weapon to start</div>
+    </div>
+
+    <button id="reset-btn" class="reset-btn">Reset Score</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
