@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Joke Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <div class="wrapper">
+    <div class="emoji" id="emoji">😂</div>
+
+    <h1 class="title">Random Joke</h1>
+    <p class="subtitle">Because laughter is the best medicine</p>
+
+    <div class="categories" id="categories">
+      <button class="cat-btn active" data-cat="Any">Any</button>
+      <button class="cat-btn" data-cat="Programming">Programming</button>
+      <button class="cat-btn" data-cat="Pun">Pun</button>
+      <button class="cat-btn" data-cat="Dark">Dark</button>
+      <button class="cat-btn" data-cat="Spooky">Spooky</button>
+    </div>
+
+    <div class="joke-box" id="joke-box">
+      <p id="joke" class="joke-text">Click the button to hear a joke!</p>
+    </div>
+
+    <div class="action-row">
+      <button id="copy-btn" class="icon-btn" aria-label="Copy joke" title="Copy">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+        </svg>
+        <span>Copy</span>
+      </button>
+
+      <button id="fav-btn" class="icon-btn" aria-label="Favorite joke" title="Favorite">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span>Favorite</span>
+      </button>
+
+      <button id="history-btn" class="icon-btn" aria-label="Show history" title="History">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+        </svg>
+        <span>History</span>
+      </button>
+    </div>
+
+    <button id="btn" class="btn">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"/>
+      </svg>
+      Get Random Joke
+    </button>
+  </div>
+
+  <div class="side-panel" id="sidePanel">
+    <div class="side-header">
+      <h2 id="sideTitle">Favorites</h2>
+      <div class="side-header-actions">
+        <button class="clear-btn" id="clearHistoryBtn" title="Clear all history">
+          Clear All
+        </button>
+        <button class="close-btn" id="closePanel" aria-label="Close">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="side-body" id="sideBody"></div>
+  </div>
+  <div class="side-overlay" id="sideOverlay"></div>
+
+    <div class="confirm-overlay" id="confirmOverlay">
+      <div class="confirm-box" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <div class="confirm-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+        </div>
+        <h3 class="confirm-title" id="confirmTitle">Clear all history?</h3>
+        <p class="confirm-message" id="confirmMessage">
+          This action cannot be undone. All your saved jokes will be permanently removed.
+        </p>
+        <div class="confirm-actions">
+          <button class="confirm-btn cancel" id="confirmCancel">Cancel</button>
+          <button class="confirm-btn danger" id="confirmOk">Clear All</button>
+        </div>
+      </div>
+    </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

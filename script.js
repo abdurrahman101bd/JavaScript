@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Random Joke Generator",
+    description: "A sleek, fully responsive joke generator built with vanilla JavaScript — featuring category filtering, favorite saving, clipboard copy, history tracking, and a dynamic dark neon theme.",
+    thumbnail: "assets/random-joke.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/random-joke",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/random-joke"
+  },{
     title: "Rock Paper Scissors",
     description: "A sleek, fully responsive Rock Paper Scissors game built with vanilla JavaScript — featuring live score tracking, animated result badges, custom SVG weapons, and a dark neon aesthetic.",
     thumbnail: "assets/rock-paper-scissors.png",
