@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Roll The Dice",
+    description: "A sleek, fully responsive dice roller built with vanilla JavaScript — featuring dual dice shake animation, glowing custom SVG faces, and a dark neon aesthetic.",
+    thumbnail: "assets/roll-the-dice.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/roll-the-dice",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/roll-the-dice"
+  },{
     title: "Flip a Coin",
     description: "A sleek, fully responsive coin flip simulator built with vanilla JavaScript — featuring a realistic 3D coin animation, live statistics, and a dark neon aesthetic.",
     thumbnail: "assets/flip-a-coin.png",

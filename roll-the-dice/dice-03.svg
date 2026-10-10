@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="dieBody3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2338"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+    <radialGradient id="pipGold3" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fff3c4"/>
+      <stop offset="60%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#c9911a"/>
+    </radialGradient>
+    <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect x="8" y="8" width="84" height="84" rx="14" ry="14"
+        fill="url(#dieBody3)" stroke="#15b7b9" stroke-width="2" filter="url(#glow3)"/>
+  <rect x="8" y="8" width="84" height="84" rx="14" ry="14"
+        fill="none" stroke="#c4fffa" stroke-width="0.6" opacity="0.35"/>
+  <circle cx="30" cy="30" r="9" fill="url(#pipGold3)" filter="url(#glow3)"/>
+  <circle cx="27" cy="27" r="2.6" fill="#fff8d6" opacity="0.7"/>
+  <circle cx="50" cy="50" r="9" fill="url(#pipGold3)" filter="url(#glow3)"/>
+  <circle cx="47" cy="47" r="2.6" fill="#fff8d6" opacity="0.7"/>
+  <circle cx="70" cy="70" r="9" fill="url(#pipGold3)" filter="url(#glow3)"/>
+  <circle cx="67" cy="67" r="2.6" fill="#fff8d6" opacity="0.7"/>
+</svg>
