@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="cyanBody" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#e0fffb"/>
+      <stop offset="35%" stop-color="#15b7b9"/>
+      <stop offset="75%" stop-color="#0d8085"/>
+      <stop offset="100%" stop-color="#064a4d"/>
+    </radialGradient>
+
+    <radialGradient id="cyanRim" cx="50%" cy="50%" r="50%">
+      <stop offset="85%" stop-color="transparent"/>
+      <stop offset="95%" stop-color="#c4fffa" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#064a4d"/>
+    </radialGradient>
+
+    <radialGradient id="cyanHighlight" cx="30%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c4fffa"/>
+      <stop offset="50%" stop-color="#0d8085"/>
+      <stop offset="100%" stop-color="#063a3c"/>
+    </linearGradient>
+
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="100" cy="100" r="92" fill="url(#cyanBody)" filter="url(#cyanGlow)"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#052f31" stroke-width="2"/>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#064a4d" stroke-width="1" opacity="0.5"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#064a4d" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="100" cy="100" r="66" fill="none" stroke="#c4fffa" stroke-width="0.8" opacity="0.5"/>
+
+  <g transform="translate(100 100)" filter="url(#cyanGlow)">
+    <path d="M0 -38 L10 -12 L36 -12 L16 4 L24 30 L0 14 L-24 30 L-16 4 L-36 -12 L-10 -12 Z" fill="url(#starGrad)" stroke="#042a2c" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M0 -26 L6 -8 L24 -8 L10 3 L16 20 L0 10 L-16 20 L-10 3 L-24 -8 L-6 -8 Z" fill="none" stroke="#c4fffa" stroke-width="0.8" opacity="0.6"/>
+    <circle cx="0" cy="0" r="4" fill="#ffffff" opacity="0.9"/>
+    <circle cx="0" cy="0" r="2" fill="#15b7b9"/>
+  </g>
+
+  <ellipse cx="70" cy="55" rx="35" ry="22" fill="url(#cyanHighlight)"/>
+  <circle cx="100" cy="100" r="92" fill="url(#cyanRim)" opacity="0.4"/>
+</svg>

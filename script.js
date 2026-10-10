@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Flip a Coin",
+    description: "A sleek, fully responsive coin flip simulator built with vanilla JavaScript — featuring a realistic 3D coin animation, live statistics, and a dark neon aesthetic.",
+    thumbnail: "assets/flip-a-coin.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/flip-a-coin",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/flip-a-coin"
+  },{
     title: "Profile Card",
     description: "A modern, fully interactive profile card built with pure HTML, CSS, vanilla JavaScript — no frameworks, no libraries. Packed with theme switching, dark mode, 3D tilt, drag-to-color, confetti, and more.",
     thumbnail: "assets/profile-card.png",

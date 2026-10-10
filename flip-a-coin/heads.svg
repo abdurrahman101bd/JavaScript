@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="goldBody" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#fff8d6"/>
+      <stop offset="35%" stop-color="#ffd166"/>
+      <stop offset="75%" stop-color="#e6a519"/>
+      <stop offset="100%" stop-color="#a86c00"/>
+    </radialGradient>
+
+    <radialGradient id="goldRim" cx="50%" cy="50%" r="50%">
+      <stop offset="85%" stop-color="transparent"/>
+      <stop offset="95%" stop-color="#fff3b0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a86c00"/>
+    </radialGradient>
+
+    <radialGradient id="goldHighlight" cx="30%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="crownGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff3c4"/>
+      <stop offset="50%" stop-color="#a86c00"/>
+      <stop offset="100%" stop-color="#5c3800"/>
+    </linearGradient>
+
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="100" cy="100" r="92" fill="url(#goldBody)" filter="url(#goldGlow)"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#8a5600" stroke-width="2"/>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#a86c00" stroke-width="1" opacity="0.5"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#a86c00" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="100" cy="100" r="66" fill="none" stroke="#fff3b0" stroke-width="0.8" opacity="0.5"/>
+
+  <g transform="translate(100 100)" filter="url(#goldGlow)">
+    <path d="M-32 8 L-32 -12 L-18 -2 L-8 -22 L0 -8 L8 -22 L18 -2 L32 -12 L32 8 Z"
+          fill="url(#crownGrad)"
+          stroke="#5c3800"
+          stroke-width="1.5"
+          stroke-linejoin="round"/>
+    <rect x="-32" y="10" width="64" height="8" rx="2"
+          fill="url(#crownGrad)"
+          stroke="#5c3800"
+          stroke-width="1.5"/>
+    <circle cx="-32" cy="-14" r="3" fill="#fff3c4"/>
+    <circle cx="-8" cy="-24" r="3" fill="#fff3c4"/>
+    <circle cx="8" cy="-24" r="3" fill="#fff3c4"/>
+    <circle cx="32" cy="-14" r="3" fill="#fff3c4"/>
+    <circle cx="0" cy="-2" r="4" fill="#ff3b5c" opacity="0.9"/>
+    <circle cx="0" cy="-3" r="1.8" fill="#ffd6dd" opacity="0.9"/>
+  </g>
+
+  <ellipse cx="70" cy="55" rx="35" ry="22" fill="url(#goldHighlight)"/>
+  <circle cx="100" cy="100" r="92" fill="url(#goldRim)" opacity="0.4"/>
+</svg>
