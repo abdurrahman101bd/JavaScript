@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Blob Maker",
+    description: "A clean, modern CSS blob generator built with vanilla JavaScript — featuring live preview, dark mode, corner radius controls, and instant CSS output.",
+    thumbnail: "assets/blob-maker.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/blob-maker",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/blob-maker"
+  },{
     title: "Pokemon Card Generator",
     description: "A sleek, fully responsive Pokemon card generator built with vanilla JavaScript — featuring type-based theming, animated card reveal, image fallback handling, and a dark neon aesthetic.",
     thumbnail: "assets/pokemon-card.png",

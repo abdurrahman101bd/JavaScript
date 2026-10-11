@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blob Maker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <nav class="app-nav">
+      <span class="nav-tag">JS</span>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </nav>
+
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 2c-2 4-2 16 0 20"/></svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Blob Maker</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-ghost" id="reset-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 3-6.7L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          Reset
+        </button>
+      </div>
+    </header>
+
+    <main class="app-body">
+      <aside class="controls">
+        <div class="control-section">
+          <div class="section-head">
+            <h2>Dimensions</h2>
+          </div>
+          <div class="field-grid">
+            <label class="field">
+              <span class="field-label">Width</span>
+              <div class="input-wrap">
+                <input type="number" id="blob-width" value="200" min="60" max="500" />
+                <span class="input-suffix">px</span>
+              </div>
+            </label>
+            <label class="field">
+              <span class="field-label">Height</span>
+              <div class="input-wrap">
+                <input type="number" id="blob-height" value="200" min="60" max="500" />
+                <span class="input-suffix">px</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="section-head">
+            <h2>Corner Radius</h2>
+          </div>
+          <div class="sliders">
+            <div class="slider-field">
+              <div class="slider-head">
+                <span class="slider-label">Top Left</span>
+                <span class="slider-value" data-for="0">30%</span>
+              </div>
+              <input type="range" min="0" max="100" value="30" />
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-head">
+                <span class="slider-label">Top Right</span>
+                <span class="slider-value" data-for="1">80%</span>
+              </div>
+              <input type="range" min="0" max="100" value="80" />
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-head">
+                <span class="slider-label">Bottom Right</span>
+                <span class="slider-value" data-for="2">60%</span>
+              </div>
+              <input type="range" min="0" max="100" value="60" />
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-head">
+                <span class="slider-label">Bottom Left</span>
+                <span class="slider-value" data-for="3">40%</span>
+              </div>
+              <input type="range" min="0" max="100" value="40" />
+            </div>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="section-head">
+            <h2>CSS Output</h2>
+          </div>
+          <div class="code-block">
+            <div class="code-head">
+              <div class="code-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <button class="btn-copy" id="copy">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy</span>
+              </button>
+            </div>
+            <pre class="code-body"><code id="css-code"></code></pre>
+          </div>
+        </div>
+      </aside>
+
+      <section class="preview">
+        <div class="preview-head">
+          <span class="preview-label">
+            <span class="live-dot"></span>
+            Live Preview
+          </span>
+          <div class="preview-meta">
+            <span id="meta-size">200 × 200</span>
+          </div>
+        </div>
+
+        <div class="preview-stage">
+          <div id="blob"></div>
+        </div>
+
+        <div class="preview-foot">
+          <div class="stat">
+            <span class="stat-key">Shape</span>
+            <span class="stat-val" id="stat-shape">Organic</span>
+          </div>
+          <div class="stat">
+            <span class="stat-key">Width</span>
+            <span class="stat-val" id="stat-w">200px</span>
+          </div>
+          <div class="stat">
+            <span class="stat-key">Height</span>
+            <span class="stat-val" id="stat-h">200px</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    <span class="toast-text"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
