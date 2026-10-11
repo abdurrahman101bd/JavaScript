@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Random Images Generator",
+    description: "A sleek, fully responsive random image generator built with vanilla JavaScript — featuring a count selector, flip shuffle animation, per-image download, lightbox preview, and a dark neon aesthetic.",
+    thumbnail: "assets/random-images.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/random-images",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/random-images"
+  },{
     title: "Random Joke Generator",
     description: "A sleek, fully responsive joke generator built with vanilla JavaScript — featuring category filtering, favorite saving, clipboard copy, history tracking, and a dynamic dark neon theme.",
     thumbnail: "assets/random-joke.png",
