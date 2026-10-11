@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Pokemon Card Generator",
+    description: "A sleek, fully responsive Pokemon card generator built with vanilla JavaScript — featuring type-based theming, animated card reveal, image fallback handling, and a dark neon aesthetic.",
+    thumbnail: "assets/pokemon-card.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/pokemon-card",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/pokemon-card"
+  },{
     title: "Random Images Generator",
     description: "A sleek, fully responsive random image generator built with vanilla JavaScript — featuring a count selector, flip shuffle animation, per-image download, lightbox preview, and a dark neon aesthetic.",
     thumbnail: "assets/random-images.png",
