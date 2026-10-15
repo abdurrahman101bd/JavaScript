@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Analog Clock",
+    description: "A sleek, fully responsive analog clock built with vanilla JavaScript — featuring smooth sweeping hands, neon cyan glow, and a dark glassmorphism aesthetic.",
+    thumbnail: "assets/analog-clock.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/analog-clock",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/analog-clock"
+  },{
     title: "Blob Maker",
     description: "A clean, modern CSS blob generator built with vanilla JavaScript — featuring live preview, dark mode, corner radius controls, and instant CSS output.",
     thumbnail: "assets/blob-maker.png",
