@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Note App",
+    description: "A modern, feature-rich sticky notes app built with vanilla HTML, CSS & JavaScript. Write, edit, pin, search, and organize your thoughts — all stored locally in your browser.",
+    thumbnail: "assets/note-app.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/note-app",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/note-app"
+  },{
     title: "Analog Clock",
     description: "A sleek, fully responsive analog clock built with vanilla JavaScript — featuring smooth sweeping hands, neon cyan glow, and a dark glassmorphism aesthetic.",
     thumbnail: "assets/analog-clock.png",
