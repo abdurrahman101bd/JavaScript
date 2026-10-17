@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Password Generator",
+    description: "A sleek, fully responsive password generator built with vanilla JavaScript — featuring cryptographically secure randomness, live strength meter, and a dark neon aesthetic.",
+    thumbnail: "assets/password-generator.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/password-generator",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/password-generator"
+  },{
     title: "Note App",
     description: "A modern, feature-rich sticky notes app built with vanilla HTML, CSS & JavaScript. Write, edit, pin, search, and organize your thoughts — all stored locally in your browser.",
     thumbnail: "assets/note-app.png",
