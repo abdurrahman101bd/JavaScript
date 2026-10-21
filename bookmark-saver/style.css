@@ -1,0 +1,985 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #06080f;
+  --gradient:
+    radial-gradient(circle at 15% 10%, rgba(99, 91, 255, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(255, 59, 92, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.08) 0%, transparent 60%);
+  --accent: #15b7b9;
+  --accent-glow: rgba(21, 183, 185, 0.55);
+  --accent-soft: rgba(21, 183, 185, 0.12);
+  --pink: #ff3b5c;
+  --pink-glow: rgba(255, 59, 92, 0.5);
+  --success: #22c55e;
+  --success-glow: rgba(34, 197, 94, 0.5);
+  --error: #ef4444;
+  --text-primary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+html, body {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 20px;
+  background-color: var(--bg);
+  background-image: var(--gradient);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--text-primary);
+}
+
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+  animation: float 12s ease-in-out infinite;
+}
+.orb-1 {
+  width: clamp(180px, 40vw, 300px);
+  height: clamp(180px, 40vw, 300px);
+  background: var(--accent);
+  top: -60px; left: -60px;
+}
+.orb-2 {
+  width: clamp(200px, 45vw, 350px);
+  height: clamp(200px, 45vw, 350px);
+  background: var(--pink);
+  bottom: -80px; right: -80px;
+  animation-delay: -6s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -30px); }
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  background: rgba(10, 15, 28, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: clamp(20px, 4vw, 32px);
+  border-radius: 22px;
+  border: 1px solid var(--border-color);
+  box-shadow:
+    var(--card-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: cardIn 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--pink), var(--accent));
+  background-size: 300% 100%;
+  animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: radial-gradient(circle at 30% 30%, rgba(21, 183, 185, 0.25), rgba(21, 183, 185, 0.05));
+  border: 1px solid rgba(21, 183, 185, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--accent-glow);
+  animation: pulseIcon 3s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 30px var(--accent-glow), 0 0 55px rgba(21, 183, 185, 0.2); }
+}
+
+h1 {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: clamp(9px, 1.4vw, 11px);
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.count-badge {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(21, 183, 185, 0.3);
+  padding: 6px 14px;
+  border-radius: 100px;
+  min-width: 44px;
+  text-align: center;
+  text-shadow: 0 0 8px var(--accent-glow);
+  transition: all 0.3s ease;
+}
+
+.count-badge.bump {
+  animation: bump 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bump {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+input[type="text"],
+input[type="url"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(11px, 1.5vw, 12px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 3px rgba(21, 183, 185, 0.15), 0 0 20px var(--accent-glow);
+}
+
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(11px, 1.6vw, 12px);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #0d8a8c);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px var(--accent-glow);
+  transition: all 0.3s ease;
+}
+
+.add-btn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.add-btn:hover::before {
+  left: 100%;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px var(--accent-glow), 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.add-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.tag-input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tag-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tag-input-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.tag-input-wrap:focus-within .tag-input-icon {
+  color: var(--accent);
+}
+
+#bookmark-tag {
+  width: 100%;
+  padding: 10px 14px 10px 34px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(10px, 1.4vw, 11px);
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+#bookmark-tag::placeholder {
+  color: var(--text-muted);
+}
+
+#bookmark-tag:focus {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 3px rgba(21, 183, 185, 0.15);
+}
+
+.preset-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.preset-tag {
+  padding: 5px 11px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-tag:hover {
+  color: var(--accent);
+  border-color: rgba(21, 183, 185, 0.4);
+  background: var(--accent-soft);
+}
+
+.preset-tag.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.tag-filter-bar {
+  display: none;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tag-filter-bar.has-tags {
+  display: flex;
+}
+
+.tag-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-filter:hover {
+  color: #fff;
+  border-color: var(--tag-color, var(--accent));
+}
+
+.tag-filter.active {
+  color: #fff;
+  background: var(--tag-color, var(--accent));
+  border-color: var(--tag-color, var(--accent));
+  box-shadow: 0 0 12px var(--tag-glow, var(--accent-glow));
+}
+
+.tag-filter .tag-count {
+  font-size: 8.5px;
+  padding: 1px 5px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+
+.drag-handle {
+  width: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: grab;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.bookmark-item:hover .drag-handle {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.drag-handle svg {
+  width: 12px;
+  height: 12px;
+}
+
+.bookmark-tag-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--tag-color, var(--accent));
+  background: color-mix(in srgb, var(--tag-color, var(--accent)) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tag-color, var(--accent)) 40%, transparent);
+  border-radius: 100px;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.bookmark-item.dragging {
+  opacity: 0.4;
+  transform: scale(0.98);
+  cursor: grabbing;
+}
+
+.bookmark-item.drag-over {
+  border-color: var(--accent);
+  border-style: dashed;
+  background: var(--accent-soft);
+}
+
+.shortcuts-hint {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  font-family: "Orbitron", sans-serif;
+  font-size: 9.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+.shortcuts-hint kbd {
+  display: inline-block;
+  padding: 2px 5px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin: 0 2px;
+}
+
+.edit-tag-input {
+  padding: 6px 10px;
+  font-size: 10px;
+  font-family: "Orbitron", sans-serif;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+}
+
+.edit-tag-input:focus {
+  border-color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .shortcuts-hint {display: none;}
+  .drag-handle {width: 10px;}
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  flex: 1;
+  min-width: 140px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.search-wrap:focus-within .search-icon {
+  color: var(--accent);
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(10px, 1.4vw, 11px);
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+#search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(21, 183, 185, 0.12);
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.sort-select {
+  padding: 10px 12px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(10px, 1.4vw, 11px);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.25s ease;
+}
+
+.sort-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(21, 183, 185, 0.12);
+}
+
+.sort-select option {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.tool-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.tool-btn:hover {
+  color: var(--accent);
+  border-color: rgba(21, 183, 185, 0.4);
+  background: var(--accent-soft);
+}
+
+.tool-btn.danger:hover {
+  color: var(--error);
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.tool-btn:active {
+  transform: scale(0.95);
+}
+
+.bookmark-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.bookmark-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.bookmark-list::-webkit-scrollbar-thumb {
+  background: rgba(21, 183, 185, 0.3);
+  border-radius: 3px;
+}
+
+.bookmark-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(21, 183, 185, 0.5);
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  animation: itemIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.25s ease;
+}
+
+@keyframes itemIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.bookmark-item:hover {
+  border-color: rgba(21, 183, 185, 0.35);
+  background: rgba(21, 183, 185, 0.05);
+  transform: translateX(2px);
+}
+
+.favicon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.favicon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.favicon .fallback {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bookmark-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bookmark-name {
+  font-size: clamp(11px, 1.5vw, 12.5px);
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.bookmark-name:hover {
+  color: var(--accent);
+}
+
+.bookmark-url {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(9px, 1.2vw, 10px);
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.bookmark-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.action-btn.delete:hover {
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.action-btn:active {
+  transform: scale(0.9);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+.empty-state-icon {
+  font-size: 44px;
+  margin-bottom: 12px;
+  opacity: 0.4;
+}
+
+.bookmark-item.editing .bookmark-content {
+  display: none;
+}
+
+.edit-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-form input {
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.edit-actions button {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.edit-save {
+  color: #fff;
+  background: var(--accent);
+}
+
+.edit-save:hover {
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.edit-cancel {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.edit-cancel:hover {
+  color: #fff;
+}
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.confirm-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.confirm-box {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: rgba(10, 15, 28, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 26px 22px 20px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.confirm-overlay.show .confirm-box {
+  transform: scale(1) translateY(0);
+}
+
+.confirm-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--error);
+  background: radial-gradient(circle at 30% 30%, rgba(239, 68, 68, 0.25), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
+}
+
+.confirm-box h3 {
+  font-size: clamp(14px, 2.2vw, 16px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.confirm-box p {
+  font-size: clamp(11px, 1.5vw, 12px);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.confirm-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.confirm-btn {
+  padding: 11px 14px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.confirm-btn.cancel {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border-color);
+}
+
+.confirm-btn.cancel:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.confirm-btn.danger {
+  color: #fff;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+.confirm-btn.danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: rgba(10, 15, 28, 0.95);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 400;
+  max-width: 90%;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--success-glow);
+}
+
+.toast.error {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(239, 68, 68, 0.4);
+}
+
+@media (max-width: 480px) {
+  body {padding: 12px;}
+  .app-container {border-radius: 18px;margin-top: 8px;}
+  .brand-icon {width: 38px;height: 38px;}
+  .count-badge {font-size: 11px;padding: 5px 10px;}
+  .bookmark-list {max-height: 320px;}
+  .toolbar {flex-direction: column;align-items: stretch;}
+  .search-wrap {width: 100%;}
+}
+
+@media (max-width: 360px) {
+  .toolbar-actions {justify-content: space-between;}
+  .sort-select {flex: 1;}
+  .bookmark-name {font-size: 11px;}
+  .bookmark-url {font-size: 9px;}
+}

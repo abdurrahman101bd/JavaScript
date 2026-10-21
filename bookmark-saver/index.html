@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookmark Saver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <main class="app-container">
+    <header class="header">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Bookmark Saver</h1>
+            <p class="subtitle">Save what matters</p>
+          </div>
+        </div>
+        <span class="count-badge" id="count-badge">0</span>
+      </div>
+    </header>
+
+    <div class="input-container">
+      <input type="text" id="bookmark-name" placeholder="Bookmark name (e.g. GitHub)" />
+      <input type="url" id="bookmark-url" placeholder="https://example.com" />
+
+      <div class="tag-input-row">
+        <div class="tag-input-wrap">
+          <svg class="tag-input-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+            <line x1="7" y1="7" x2="7.01" y2="7"/>
+          </svg>
+          <input type="text" id="bookmark-tag" placeholder="Tag (optional)" maxlength="20" />
+        </div>
+        <div class="preset-tags" id="preset-tags">
+          <button type="button" class="preset-tag" data-tag="Work">Work</button>
+          <button type="button" class="preset-tag" data-tag="Dev">Dev</button>
+          <button type="button" class="preset-tag" data-tag="Design">Design</button>
+          <button type="button" class="preset-tag" data-tag="Learn">Learn</button>
+          <button type="button" class="preset-tag" data-tag="Fun">Fun</button>
+        </div>
+      </div>
+
+      <button id="add-bookmark" class="add-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        Add Bookmark
+      </button>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search bookmarks..." />
+      </div>
+
+      <div class="toolbar-actions">
+        <select id="sort-select" class="sort-select" title="Sort by">
+          <option value="recent">Recent</option>
+          <option value="name">Name</option>
+          <option value="url">URL</option>
+          <option value="custom">Custom</option>
+        </select>
+
+        <button class="tool-btn" id="export-btn" title="Export bookmarks as JSON">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </button>
+
+        <button class="tool-btn" id="import-btn" title="Import bookmarks from JSON">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </button>
+        <input type="file" id="import-file" accept="application/json" hidden />
+
+        <button class="tool-btn danger" id="clear-all-btn" title="Clear all bookmarks">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"/>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="tag-filter-bar" id="tag-filter-bar"></div>
+
+    <ul id="bookmark-list" class="bookmark-list"></ul>
+
+    <div class="shortcuts-hint">
+      <span><kbd>Ctrl</kbd> + <kbd>N</kbd> new</span>
+      <span><kbd>Ctrl</kbd> + <kbd>F</kbd> search</span>
+      <span><kbd>Esc</kbd> clear</span>
+    </div>
+  </main>
+
+  <div class="confirm-overlay" id="confirm-overlay">
+    <div class="confirm-box">
+      <div class="confirm-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+      </div>
+      <h3 id="confirm-title">Are you sure?</h3>
+      <p id="confirm-message">This action cannot be undone.</p>
+      <div class="confirm-actions">
+        <button class="confirm-btn cancel" id="confirm-cancel">Cancel</button>
+        <button class="confirm-btn danger" id="confirm-ok">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Bookmark Saver",
+    description: "A sleek, fully responsive bookmark manager built with vanilla JavaScript — featuring live search, tags, drag-to-reorder, import/export, and a dark neon aesthetic.",
+    thumbnail: "assets/bookmark-saver.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/bookmark-saver",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/bookmark-saver"
+  },{
     title: "Password Generator",
     description: "A sleek, fully responsive password generator built with vanilla JavaScript — featuring cryptographically secure randomness, live strength meter, and a dark neon aesthetic.",
     thumbnail: "assets/password-generator.png",
