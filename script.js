@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "QR Code Generator",
+    description: "A sleek, fully responsive QR code generator built with vanilla JavaScript — featuring live color customization, error correction levels, clipboard copy, and native share support.",
+    thumbnail: "assets/qr-code-generator.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/qr-code-generator",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/qr-code-generator"
+  },{
     title: "Bookmark Saver",
     description: "A sleek, fully responsive bookmark manager built with vanilla JavaScript — featuring live search, tags, drag-to-reorder, import/export, and a dark neon aesthetic.",
     thumbnail: "assets/bookmark-saver.png",

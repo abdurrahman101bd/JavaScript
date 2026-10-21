@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <main class="container">
+    <div class="card">
+      <header class="header">
+        <div class="header-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20h1"/>
+          </svg>
+        </div>
+        <h1>QR Code Generator</h1>
+        <p class="subtitle">Enter text or URL to generate a QR code</p>
+      </header>
+
+      <div class="input-section">
+        <div class="input-head">
+          <label for="inputText">Content</label>
+          <span class="char-count"><span id="char-count">0</span> / 500</span>
+        </div>
+        <div class="textarea-wrap">
+          <textarea id="inputText" placeholder="Enter text or URL here..." rows="4" maxlength="500" ></textarea>
+          <button class="clear-btn" id="clearBtn" title="Clear" aria-label="Clear input">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="options">
+        <div class="option-group">
+          <label for="size">Size</label>
+          <select id="size">
+            <option value="150">150 × 150</option>
+            <option value="200" selected>200 × 200</option>
+            <option value="300">300 × 300</option>
+            <option value="400">400 × 400</option>
+            <option value="500">500 × 500</option>
+          </select>
+        </div>
+
+        <div class="option-group">
+          <label for="ecLevel">Error Correction</label>
+          <select id="ecLevel">
+            <option value="L">Low (7%)</option>
+            <option value="M">Medium (15%)</option>
+            <option value="Q">Quartile (25%)</option>
+            <option value="H" selected>High (30%)</option>
+          </select>
+        </div>
+
+        <div class="option-group color-option">
+          <label>Colors</label>
+          <div class="color-pickers">
+            <label class="color-picker" title="Dark color">
+              <input type="color" id="darkColor" value="#15b7b9" />
+              <span>Dark</span>
+            </label>
+            <label class="color-picker" title="Light color">
+              <input type="color" id="lightColor" value="#ffffff" />
+              <span>Light</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="generateBtn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v20M2 12h20"/>
+        </svg>
+        Generate QR Code
+      </button>
+
+      <div class="qr-section" id="qrSection">
+        <div class="qr-container" id="qrContainer"></div>
+
+        <div class="qr-actions">
+          <button class="action-btn primary" id="downloadBtn">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download
+          </button>
+
+          <button class="action-btn" id="copyBtn">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            Copy
+          </button>
+
+          <button class="action-btn" id="shareBtn">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+            Share
+          </button>
+        </div>
+
+        <p class="qr-tip">Tip: Scan with your phone camera to test</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+</body>
+</html>
