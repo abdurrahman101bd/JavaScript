@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Currency Converter",
+    description: "A sleek, fully responsive currency converter built with vanilla JavaScript — featuring real-time rates, live conversion, 7-day historical charts, and a modern emerald fintech aesthetic.",
+    thumbnail: "assets/currency-converter.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/currency-converter",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/currency-converter"
+  },{
     title: "QR Code Generator",
     description: "A sleek, fully responsive QR code generator built with vanilla JavaScript — featuring live color customization, error correction levels, clipboard copy, and native share support.",
     thumbnail: "assets/qr-code-generator.png",

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+
+  <main class="app">
+
+    <section class="panel panel-form">
+      <header class="panel-head">
+        <div class="logo">
+          <span class="logo-mark">¢</span>
+          <span class="logo-text">Currency</span>
+        </div>
+        <span class="badge">Live</span>
+      </header>
+
+      <h1 class="heading">Convert currency</h1>
+      <p class="desc">Real-time exchange rates, powered by ExchangeRate API</p>
+
+      <form id="converter-form" autocomplete="off">
+        <div class="field">
+          <label for="amount">Amount</label>
+          <div class="input-wrap">
+            <span class="input-prefix" id="amount-prefix">$</span>
+            <input type="number" id="amount" placeholder="0.00" min="0" step="0.01" value="1" required />
+          </div>
+        </div>
+
+        <div class="convert-row">
+          <div class="field">
+            <label for="from-currency">From</label>
+            <div class="select-wrap">
+              <span class="flag" id="from-flag">🇺🇸</span>
+              <select id="from-currency"></select>
+            </div>
+          </div>
+
+          <button type="button" class="swap-btn" id="swap-btn" title="Swap currencies" aria-label="Swap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 4v16M7 4l-3 3M7 4l3 3"/>
+              <path d="M17 20V4M17 20l3-3M17 20l-3-3"/>
+            </svg>
+          </button>
+
+          <div class="field">
+            <label for="to-currency">To</label>
+            <div class="select-wrap">
+              <span class="flag" id="to-flag">🇧🇩</span>
+              <select id="to-currency"></select>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="convert-btn" id="convert-btn">
+          Convert
+        </button>
+      </form>
+    </section>
+
+    <section class="panel panel-result" id="result-panel">
+      <div class="result-head">
+        <span class="result-label">Converted amount</span>
+        <span class="live-dot" aria-hidden="true"></span>
+      </div>
+
+      <div class="result-main" id="result-main">
+        <span class="result-value" id="result-value">—</span>
+        <span class="result-currency" id="result-currency"></span>
+      </div>
+
+      <div class="result-rate" id="result-rate">
+        <span class="rate-loading">Loading rates...</span>
+      </div>
+
+      <div class="result-meta" id="result-meta" hidden>
+        <div class="meta-item">
+          <span class="meta-key">From</span>
+          <span class="meta-value" id="meta-from">—</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-key">To</span>
+          <span class="meta-value" id="meta-to">—</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-key">Updated</span>
+          <span class="meta-value" id="meta-updated">—</span>
+        </div>
+      </div>
+
+      <div class="chart-wrap" id="chart-wrap" hidden>
+        <div class="chart-head">
+          <span class="chart-label">Last 7 days</span>
+          <span class="chart-pair" id="chart-pair">USD → BDT</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="rate-chart"></canvas>
+        </div>
+      </div>
+      
+      <div class="chart-loading" id="chart-loading" hidden>
+        <span class="rate-loading">Loading chart...</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
