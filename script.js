@@ -115,7 +115,7 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/month-calendar"
   },{
     title: "Mini Calendar",
-    description: "A sleek, responsive mini calendar built with vanilla JavaScript — featuring a dark neon aesthetic, live date updates, and smooth animations.",
+    description: "A sleek, fully responsive mini calendar built with vanilla JavaScript — featuring a coastal editorial aesthetic, elegant script typography, and subtle blue glow accents.",
     thumbnail: "assets/mini-calendar.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/mini-calendar",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/mini-calendar"
