@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "GitHub User Finder",
+    description: "A sleek, fully responsive GitHub profile explorer built with vanilla JavaScript — featuring a GitHub-native dark theme, recent search history, repo sorting, and pagination.",
+    thumbnail: "assets/github-user-finder.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/github-user-finder",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/github-user-finder"
+  },{
     title: "Currency Converter",
     description: "A sleek, fully responsive currency converter built with vanilla JavaScript — featuring real-time rates, live conversion, 7-day historical charts, and a modern emerald fintech aesthetic.",
     thumbnail: "assets/currency-converter.png",
