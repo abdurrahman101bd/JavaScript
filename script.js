@@ -109,7 +109,7 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/otp-verification"
   },{
     title: "Month Calendar",
-    description: "A sleek, fully responsive month calendar built with vanilla JavaScript — featuring a dark neon aesthetic, live date rendering, and smooth staggered animations.",
+    description: "A sleek, fully responsive month calendar built with vanilla JavaScript — featuring a coastal editorial aesthetic, elegant script typography, and live blue theme rendering.",
     thumbnail: "assets/month-calendar.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/month-calendar",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/month-calendar"
