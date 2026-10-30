@@ -7,7 +7,7 @@
 <h1 align="center">Password Generator</h1>
 
 <p align="center">
-  A sleek, fully responsive password generator built with vanilla JavaScript — featuring cryptographically secure randomness, live strength meter, and a dark neon aesthetic.
+  A sleek, fully responsive password generator built with vanilla JavaScript — featuring cryptographically secure randomness, live strength meter, and a coastal editorial aesthetic.
 </p>
 
 <p align="center">
@@ -30,16 +30,19 @@
 - **Dynamic strength calculation** — scores based on length + character variety
 - **Character type validation** — shows error toast if no types are selected
 - **One-click copy** — with clipboard API + `execCommand` fallback for mobile
-- **Animated copy feedback** — icon morphs from copy → check with glow
+- **Animated copy feedback** — icon morphs from copy → check with color transition
 - **Auto-generate on load** — first password appears instantly
-- **Animated sliders** — custom cyan thumb with hover scale + focus ring
-- **Neon toggle switches** — animated slide with cyan glow
-- **Bump animation** — length value pulses on change
+- **Coastal editorial aesthetic** — cool blue palette with off-white background
+- **Glow orbs in background** — sky blue top-left + deep navy bottom-right, both animated
+- **Editorial serif headings** — Fraunces serif + Alex Brush script accents
+- **Corner brackets** — subtle editorial framing detail
+- **Custom slider** — blue gradient thumb with white border + hover scale
+- **Animated toggles** — smooth slide with blue gradient when on
+- **Bump animation** — Alex Brush script length number pulses on change
 - **Toast notifications** — smooth slide-in with success/error variants
-- **Glassmorphism card** — dark frosted with animated gradient top line
-- **Floating glow orbs** — soft ambient background orbs
+- **Paper card** — white with blue-tinted shadows
 - **Fully responsive** — perfect on mobile (320px+), tablet, and desktop
-- **Premium typography** — Orbitron font with subtle glow effects
+- **Premium typography** — Fraunces + Inter + Alex Brush + JetBrains Mono
 
 ---
 
@@ -70,11 +73,22 @@ function secureRandom(max) {
 
 | Score | Label | Color |
 |-------|-------|-------|
-| < 40 | **Weak** | Red `#fc8181` |
-| 40–69 | **Medium** | Yellow `#fbd38d` |
-| ≥ 70 | **Strong** | Green `#68d391` |
+| < 40 | **Weak** | Soft red `#d96a6a` |
+| 40–69 | **Medium** | Warm amber `#d4a04a` |
+| ≥ 70 | **Strong** | Sage green `#4a9d6a` |
 
 Passwords under 8 characters are capped at **Weak** regardless of variety.
+
+---
+
+## 🐛 Robustness
+
+- **Secure randomness** — `crypto.getRandomValues()` with `Math.random()` fallback
+- **Validation** — at least one character type required
+- **Clipboard fallback** — `execCommand` for older browsers and non-HTTPS contexts
+- **Length calculation** — `padStart` keeps numbers formatted
+- **No external dependencies** — pure vanilla JS
+- **Debounced interactions** — toast timers prevent spam
 
 ---
 
@@ -90,7 +104,9 @@ Passwords under 8 characters are capped at **Weak** regardless of variety.
 
 ---
 
-> "This is a demo project. For production use, consider established tools like `1Password` or `Bitwarden` — but the cryptography principles here are sound."
+## ⚠️ Note
+
+> This is a demo project. For production use, consider established tools like **1Password** or **Bitwarden** — but the cryptography principles here are sound.
 
 ---
 
