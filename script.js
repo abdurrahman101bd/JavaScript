@@ -25,7 +25,7 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/bookmark-saver"
   },{
     title: "Password Generator",
-    description: "A sleek, fully responsive password generator built with vanilla JavaScript — featuring cryptographically secure randomness, live strength meter, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive password generator built with vanilla JavaScript — featuring cryptographically secure randomness, live strength meter, and a coastal editorial aesthetic.",
     thumbnail: "assets/password-generator.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/password-generator",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/password-generator"
