@@ -7,7 +7,7 @@
 <h1 align="center">OTP Verification</h1>
 
 <p align="center">
-  A sleek, fully responsive OTP verification form built with vanilla JavaScript — featuring sequential input flow, animated loading & success states, and a dark neon aesthetic.
+  A sleek, fully responsive OTP verification form built with vanilla JavaScript — featuring sequential input flow, animated loading & success states, and a warm emerald aesthetic.
 </p>
 
 <p align="center">
@@ -23,21 +23,68 @@
 
 ## ✨ Features
 
-- **6-digit OTP input** — clean, modern input boxes with neon cyan glow
-- **Sequential input flow** — only the first box is enabled at first; the next unlocks as you type
+- **6-digit OTP input** — clean, modern input boxes
+- **Sequential input flow** — only the first box is enabled; the next unlocks as you type
 - **Free edit when complete** — once all 6 digits are filled, every box becomes editable
 - **Smart backspace** — clearing a box re-disables the ones after it and moves focus back
 - **Paste support** — paste a full 6-digit code and it distributes across all boxes
 - **Arrow key navigation** — move between boxes with left/right arrows
 - **Enter to submit** — press Enter once the code is complete to verify
-- **Loading state** — inputs fade out and a neon spinner appears during verification
+- **Loading state** — inputs fade out and an emerald spinner appears during verification
 - **Success state** — animated checkmark draw + "Verified Successfully!" message
 - **Auto reset** — 3 seconds after success, the form resets and refocuses the first box
 - **Resend timer** — 30-second countdown before resend is enabled
 - **Toast notifications** — smooth slide-in feedback for success & error states
 - **Error shake** — invalid codes trigger a red shake animation
+- **Emerald + gold aesthetic** — warm cream background with soft glow orbs
+- **Subtle grid background** — faint green blueprint lines
 - **Fully responsive** — perfect on mobile (320px+), tablet, and desktop
-- **Premium typography** — Orbitron font with glow effects
+- **Premium typography** — Manrope + DM Mono
+
+---
+
+## ⌨️ Keyboard & Interactions
+
+| Action | Result |
+|--------|--------|
+| **Type digit** | Fill box, auto-focus next |
+| **Backspace (empty box)** | Clear previous, focus previous |
+| **Arrow Left / Right** | Navigate between enabled boxes |
+| **Enter** | Submit if all boxes are filled |
+| **Paste** | Distribute 6-digit code across boxes |
+
+---
+
+## 🐛 Robustness
+
+- **Sequential enable logic** — each box unlocks only after the previous is filled
+- **Free edit when complete** — once all 6 digits are in, everything becomes editable
+- **Backspace chain** — clearing a box clears the next and refocuses correctly
+- **Paste sanitation** — non-digits stripped, capped at 6 characters
+- **Keyboard shortcuts** — Arrow keys, Enter, Backspace all work as expected
+- **Double-submit guard** — `isVerifying` flag prevents overlapping submissions
+- **Auto-reset** — 3s after success, the form resets to input state
+- **Resend cooldown** — 30s timer before user can request a new code
+- **Toast cleanup** — cleared timer prevents message flicker
+
+---
+
+## 🔮 Future Ideas
+
+- [ ] **Real API integration** — connect to a backend verify endpoint
+- [ ] **Email / phone toggle** — switch between verification methods
+- [ ] **4-digit OTP variant** — configurable digit count
+- [ ] **Resend cooldown options** — 30s / 60s / 120s
+- [ ] **Remember-me flow** — skip OTP on trusted devices
+- [ ] **Multi-language support** (Bangla / English)
+- [ ] **Dark mode toggle**
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to check the [issues page](https://github.com/abdurrahman101bd/JavaScript/issues).
 
 ---
 

@@ -7,7 +7,7 @@
 <h1 align="center">QR Code Generator</h1>
 
 <p align="center">
-  A sleek, fully responsive QR code generator built with vanilla JavaScript — featuring live color customization, error correction levels, clipboard copy, and native share support.
+  A sleek, fully responsive QR code generator built with vanilla JavaScript — featuring live color customization, error correction levels, clipboard copy, and a warm emerald aesthetic.
 </p>
 
 <p align="center">
@@ -37,10 +37,56 @@
 - **Loading spinner** — visual feedback while generating
 - **Toast notifications** — success/error feedback (no more `alert()`)
 - **Scan tip** — helpful hint below the QR
-- **Glassmorphism card** — dark frosted card with animated gradient top line
-- **Floating glow orbs** — soft ambient background orbs
+- **Warm emerald aesthetic** — cream background with soft glow orbs
+- **Subtle grid background** — faint green blueprint lines
 - **Fully responsive** — perfect on mobile (320px+), tablet, and desktop
-- **Premium typography** — Orbitron font with glow effects
+- **Premium typography** — Manrope + DM Mono
+
+---
+
+## 🎨 Design Highlights
+
+| Element | Style |
+|---------|-------|
+| **Background** | Warm off-white `#f4f7f3` with subtle green grid |
+| **Glow orbs** | Emerald `#0e8a5c` + gold `#c89618` (soft) |
+| **Card** | Pure white with rounded 20px corners + warm shadow |
+| **Header icon** | Emerald gradient rounded square |
+| **Heading** | Manrope extra-bold |
+| **Textarea** | Cream bg with emerald focus glow |
+| **Selects** | Cream with emerald focus |
+| **Color pickers** | Cream with emerald hover |
+| **Generate button** | Emerald gradient with shine sweep |
+| **QR container** | White with soft warm shadow |
+| **Action buttons** | Cream with emerald hover |
+| **Toast** | Ink dark pill |
+
+---
+
+## 🎨 Error Correction Levels
+
+| Level | Recovery | Use Case |
+|-------|----------|----------|
+| **L** | 7% | Clean environments |
+| **M** | 15% | Standard usage |
+| **Q** | 25% | Moderate damage |
+| **H** | 30% | **Recommended** — most resilient |
+
+Higher EC levels produce denser QR codes but are more reliable when printed, scanned at angles, or partly damaged.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| **HTML5** | Structure & semantic markup |
+| **CSS3** | Grid layout, gradients, responsive design (`clamp()`) |
+| **JavaScript (Vanilla)** | QR generation logic, DOM updates |
+| **QRCode.js** | QR generation library (via CDN) |
+| **Clipboard API** | Copy image to clipboard |
+| **Web Share API** | Native mobile share |
+| **Google Fonts** | Manrope, DM Mono |
 
 ---
 
@@ -66,6 +112,7 @@
 - **Share fallback** — graceful error if Web Share API unavailable
 - **Abort-safe share** — user cancels share → no error thrown
 - **Async-safe generation** — `isGenerating` flag prevents double-clicks
+- **Clean re-render** — QR container cleared before each generation
 
 ---
 

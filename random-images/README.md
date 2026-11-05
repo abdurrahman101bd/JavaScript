@@ -7,7 +7,7 @@
 <h1 align="center">Random Images Generator</h1>
 
 <p align="center">
-  A sleek, fully responsive random image generator built with vanilla JavaScript — featuring a count selector, flip shuffle animation, per-image download, lightbox preview, and a dark neon aesthetic.
+  A sleek, fully responsive random image generator built with vanilla JavaScript — featuring a count selector, shuffle animation, per-image download, lightbox preview, and a warm emerald aesthetic.
 </p>
 
 <p align="center">
@@ -25,20 +25,46 @@
 
 - **Random images on demand** — fresh set fetched from Picsum on every click
 - **Count selector** — choose 1, 3, 5, or 9 images at a time
-- **Flip shuffle animation** — old cards flip out, new ones flip in with a 3D rotation
+- **Shuffle animation** — old cards scale out, new ones scale in smoothly
 - **Per-image download** — hover a card to reveal a download button
 - **Lightbox preview** — click any image to open it in a large overlay
 - **Download from lightbox** — save the enlarged image directly
 - **Skeleton loading** — shimmer placeholders while images fetch
 - **Staggered fade-in** — each image appears with a small delay
-- **Hover zoom** — cards lift and zoom gently with a cyan glow
-- **Number badges** — auto-incremented labels (1, 2, 3...) on each card
+- **Hover zoom** — cards lift and zoom gently with an emerald glow
+- **Number badges** — gold pill labels (01, 02, 03...) on each card
 - **Broken image fallback** — safe placeholder if an image fails to load
 - **Keyboard shortcuts** — `Esc` closes the lightbox
 - **Overlay click closes lightbox** — intuitive dismissal
 - **Button loading state** — spinner prevents double-clicks during fetch
+- **Emerald + gold aesthetic** — warm cream background with soft glow orbs
 - **Fully responsive** — perfect on mobile (320px+), tablet, and desktop
-- **Premium typography** — Orbitron font with glow effects
+- **Premium typography** — Manrope + DM Mono
+
+---
+
+## ⌨️ Keyboard & Interaction
+
+| Action | Result |
+|--------|--------|
+| **Click image** | Open lightbox |
+| **Click download (card)** | Save image |
+| **Click download (lightbox)** | Save enlarged image |
+| **Click overlay** | Close lightbox |
+| **Press Esc** | Close lightbox |
+| **Hover card** | Reveal download button + lift |
+
+---
+
+## 🐛 Robustness
+
+- **Download reliability** — uses `fetch` + `Blob` for a real cross-origin download, with a `window.open` fallback
+- **Broken image handling** — displays a 🖼️ placeholder if the image fails
+- **Skeleton loading** — prevents layout shift while images load
+- **Flip-out before clear** — old cards animate out before being removed for a smoother transition
+- **Double-click guard** — `isLoading` flag prevents overlapping generates
+- **Body scroll lock** — `overflow: hidden` while the lightbox is open
+- **Blob cleanup** — `URL.revokeObjectURL` after download
 
 ---
 
@@ -49,7 +75,7 @@
 - [ ] **Slideshow mode** — auto-advance through images in lightbox
 - [ ] **Keyboard navigation** — left/right arrows to navigate in lightbox
 - [ ] **Custom resolution** — pick image dimensions
-- [ ] **Dark / light theme** toggle
+- [ ] **Dark mode** — inverted emerald theme
 
 ---
 

@@ -13,13 +13,13 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/currency-converter"
   },{
     title: "QR Code Generator",
-    description: "A sleek, fully responsive QR code generator built with vanilla JavaScript — featuring live color customization, error correction levels, clipboard copy, and native share support.",
+    description: "A sleek, fully responsive QR code generator built with vanilla JavaScript — featuring live color customization, error correction levels, clipboard copy, and a warm emerald aesthetic.",
     thumbnail: "assets/qr-code-generator.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/qr-code-generator",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/qr-code-generator"
   },{
     title: "Bookmark Saver",
-    description: "A sleek, fully responsive bookmark manager built with vanilla JavaScript — featuring live search, tags, drag-to-reorder, import/export, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive bookmark manager built with vanilla JavaScript — featuring live search, tags, drag-to-reorder, import/export, and a warm library aesthetic.",
     thumbnail: "assets/bookmark-saver.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/bookmark-saver",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/bookmark-saver"
@@ -37,7 +37,7 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/note-app"
   },{
     title: "Analog Clock",
-    description: "A sleek, fully responsive analog clock built with vanilla JavaScript — featuring smooth sweeping hands, neon cyan glow, and a dark glassmorphism aesthetic.",
+    description: "A sleek, fully responsive analog clock built with vanilla JavaScript — featuring smooth sweeping hands, editorial serif typography, and a coastal blue aesthetic.",
     thumbnail: "assets/analog-clock.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/analog-clock",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/analog-clock"
@@ -49,37 +49,37 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/blob-maker"
   },{
     title: "Pokemon Card Generator",
-    description: "A sleek, fully responsive Pokemon card generator built with vanilla JavaScript — featuring type-based theming, animated card reveal, image fallback handling, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive Pokemon card generator built with vanilla JavaScript — featuring type-based theming, animated card reveal, image fallback handling, and a warm emerald aesthetic.",
     thumbnail: "assets/pokemon-card.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/pokemon-card",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/pokemon-card"
   },{
     title: "Random Images Generator",
-    description: "A sleek, fully responsive random image generator built with vanilla JavaScript — featuring a count selector, flip shuffle animation, per-image download, lightbox preview, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive random image generator built with vanilla JavaScript — featuring a count selector, shuffle animation, per-image download, lightbox preview, and a warm emerald aesthetic.",
     thumbnail: "assets/random-images.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/random-images",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/random-images"
   },{
     title: "Random Joke Generator",
-    description: "A sleek, fully responsive joke generator built with vanilla JavaScript — featuring category filtering, favorite saving, clipboard copy, history tracking, and a dynamic dark neon theme.",
+    description: "A sleek, fully responsive joke generator built with vanilla JavaScript — featuring category filtering, favorite saving, clipboard copy, history tracking, and a dynamic warm emerald theme.",
     thumbnail: "assets/random-joke.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/random-joke",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/random-joke"
   },{
     title: "Rock Paper Scissors",
-    description: "A sleek, fully responsive Rock Paper Scissors game built with vanilla JavaScript — featuring live score tracking, animated result badges, custom SVG weapons, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive Rock Paper Scissors game built with vanilla JavaScript — featuring live score tracking, animated result badges, custom SVG weapons, and a coastal editorial aesthetic.",
     thumbnail: "assets/rock-paper-scissors.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/rock-paper-scissors",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/rock-paper-scissors"
   },{
     title: "Roll The Dice",
-    description: "A sleek, fully responsive dice roller built with vanilla JavaScript — featuring dual dice shake animation, glowing custom SVG faces, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive dice roller built with vanilla JavaScript — featuring dual dice shake animation, custom SVG faces, and a coastal editorial aesthetic.",
     thumbnail: "assets/roll-the-dice.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/roll-the-dice",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/roll-the-dice"
   },{
     title: "Flip a Coin",
-    description: "A sleek, fully responsive coin flip simulator built with vanilla JavaScript — featuring a realistic 3D coin animation, live statistics, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive coin flip simulator built with vanilla JavaScript — featuring a realistic 3D coin animation, live statistics, and a coastal editorial aesthetic.",
     thumbnail: "assets/flip-a-coin.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/flip-a-coin",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/flip-a-coin"
@@ -91,7 +91,7 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/profile-card"
   },{
     title: "Lorem Ipsum Generator",
-    description: "A minimalist Lorem Ipsum generator built with vanilla HTML, CSS & JavaScript.",
+    description: "A sleek, fully responsive Lorem Ipsum generator built with vanilla HTML, CSS & JavaScript — featuring a split-panel layout, dark/light mode, and a warm emerald aesthetic.",
     thumbnail: "assets/lorem-ipsum-generator.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/lorem-ipsum-generator",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/lorem-ipsum-generator"
@@ -103,7 +103,7 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/toast-notification"
   },{
     title: "OTP Verification",
-    description: "A sleek, fully responsive OTP verification form built with vanilla JavaScript — featuring sequential input flow, animated loading & success states, and a dark neon aesthetic.",
+    description: "A sleek, fully responsive OTP verification form built with vanilla JavaScript — featuring sequential input flow, animated loading & success states, and a warm emerald aesthetic.",
     thumbnail: "assets/otp-verification.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/otp-verification",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/otp-verification"
@@ -127,7 +127,7 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/digital-clock"
   },{
     title: "Random Color Generator",
-    description: "A modern, lightweight web app that generates random hex colors with one click — and lets you copy them instantly.",
+    description: "A sleek, fully responsive color palette generator built with vanilla JavaScript — featuring one-click hex generation, instant copy, dark mode, and a warm emerald aesthetic.",
     thumbnail: "assets/random-color-generator.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/random-color-generator",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/random-color-generator"
@@ -139,13 +139,13 @@ const projects = [
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/login-form"
   },{
     title: "Tic Tac Toe",
-    description: "A classic two-player Tic Tac Toe game with a modern neon interface. Line up three in a row to win and watch the winning cells come alive with a bouncing animation.",
+    description: "A sleek, fully responsive Tic Tac Toe game built with vanilla JavaScript — featuring two-player gameplay, animated win states, confetti celebration, and a warm emerald aesthetic.",
     thumbnail: "assets/TicTacToe.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/TicTacToe",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/TicTacToe"
   },{
     title: "Text Utils",
-    description: "A fast, fully client-side tool to transform your text easily (UPPERCASE, lowercase, Capitalize, Remove Spaces, and quick copying).",
+    description: "A sleek, fully responsive text transformation tool built with vanilla JavaScript — featuring live character count, case conversion, whitespace cleanup, and a warm emerald aesthetic.",
     thumbnail: "assets/TextUtils.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/TextUtils",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/TextUtils"

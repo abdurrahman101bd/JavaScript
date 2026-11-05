@@ -7,7 +7,7 @@
 <h1 align="center">Pokemon Card Generator</h1>
 
 <p align="center">
-  A sleek, fully responsive Pokemon card generator built with vanilla JavaScript — featuring type-based theming, animated card reveal, image fallback handling, and a dark neon aesthetic.
+  A sleek, fully responsive Pokemon card generator built with vanilla JavaScript — featuring type-based theming, animated card reveal, image fallback handling, and a warm emerald aesthetic.
 </p>
 
 <p align="center">
@@ -24,20 +24,34 @@
 ## ✨ Features
 
 - **Random Pokemon on demand** — fetches any of 898 Pokemon from PokeAPI
-- **Type-based theming** — card border, glow, buttons, and stats adopt the Pokemon's primary type color
+- **Type-based theming** — card top accent, HP badge, glow, buttons, and stats adopt the Pokemon's primary type color
 - **All 18 types mapped** — bug, dark, dragon, electric, fairy, fighting, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water
 - **Smart image fallback** — tries dream_world → official artwork → home → default sprite
 - **Inline error fallback** — worst case uses the default sprite so a broken image never appears
 - **Animated card reveal** — image pops in with a bouncy scale animation
 - **Glow halo behind image** — soft pulsing radial glow in the Pokemon's type color
-- **HP badge** — floating pill in the top-right corner
-- **Type badges** — pill-shaped tags with per-type colors
-- **Interactive stats** — attack, defense, speed cards with hover glow
-- **Loading state** — animated spinner while fetching
+- **HP badge** — cream pill with type-colored border and value
+- **Type badges** — pill-shaped tags with per-type colors and glow
+- **Interactive stats** — attack, defense, speed cream cards with hover lift + type-colored glow
+- **Loading state** — emerald spinner while fetching
 - **Error state** — user-friendly message if the fetch fails
 - **Auto-generate on load** — first Pokemon appears instantly on page open
+- **Warm emerald aesthetic** — cream background with soft glow orbs
 - **Fully responsive** — perfect on mobile (320px+), tablet, and desktop
-- **Premium typography** — Orbitron font with glow effects
+- **Premium typography** — Manrope + DM Mono
+
+---
+
+## 🐛 Robustness
+
+- **Broken image fix** — `dream_world.front_default` is often `null`; now falls back through 4 sources
+- **Complete type map** — all 18 type colors and glows defined
+- **Error handling** — fetch failures show a friendly sad emoji placeholder
+- **Loading state** — emerald spinner while fetching
+- **Async/await** — clean promise handling with try/catch/finally
+- **898 Pokemon** — expanded from 150 to include Gen 1–8
+- **Double-click guard** — `isLoading` flag prevents overlapping fetches
+- **CSS variables** — theming via `--card-color` and `--card-glow` (no inline styles)
 
 ---
 
@@ -50,6 +64,7 @@
 - [ ] **Cry sound** — play the Pokemon's cry via PokeAPI
 - [ ] **Shiny variant** — 50% chance of shiny sprite
 - [ ] **Evolution chain** — show evolutions
+- [ ] **Type filter** — pick a Pokemon of a specific type
 
 ---
 

@@ -7,7 +7,7 @@
 <h1 align="center">Bookmark Saver</h1>
 
 <p align="center">
-  A sleek, fully responsive bookmark manager built with vanilla JavaScript — featuring live search, tags, drag-to-reorder, import/export, and a dark neon aesthetic.
+  A sleek, fully responsive bookmark manager built with vanilla JavaScript — featuring live search, tags, drag-to-reorder, import/export, and a warm library aesthetic.
 </p>
 
 <p align="center">
@@ -42,27 +42,11 @@
 - **Count badge** — live bookmark count with bump animation
 - **Empty states** — helpful messages when no bookmarks or no matches
 - **Toast notifications** — success/error feedback for every action
+- **Warm library aesthetic** — cream paper + terracotta glow orbs
 - **Fully responsive** — perfect on mobile (320px+), tablet, and desktop
-- **Premium typography** — Orbitron font with glow effects
-- **Dark neon theme** — floating glow orbs + glassmorphism card
+- **Premium typography** — DM Serif Display + Inter + JetBrains Mono
 
 ---
-
-## 🛠️ Tech Stack
-
-| Technology | Usage |
-|------------|-------|
-| **HTML5** | Structure & semantic markup |
-| **CSS3** | Glassmorphism, animations, responsive layout (`clamp()`, grid, flexbox) |
-| **JavaScript (Vanilla)** | DOM updates, state management, drag & drop API |
-| **localStorage** | Persistent bookmark storage |
-| **FileReader API** | JSON import |
-| **Blob API** | JSON export |
-| **Google Favicon API** | Auto-fetch bookmark icons |
-| **Google Fonts** | Orbitron |
-
----
-
 
 ## ⌨️ Keyboard Shortcuts
 
@@ -80,17 +64,17 @@
 
 ## 🏷️ Tags
 
-Preset tags with distinct colors:
+Preset tags with distinct warm colors:
 
 | Tag | Color |
 |-----|-------|
-| **Work** | Cyan `#15b7b9` |
-| **Dev** | Purple `#8b5cf6` |
-| **Design** | Pink `#ff3b5c` |
-| **Learn** | Amber `#f59e0b` |
-| **Fun** | Green `#22c55e` |
+| **Work** | Terracotta `#b85c38` |
+| **Dev** | Warm gold `#c9a44a` |
+| **Design** | Rose `#c98a8a` |
+| **Learn** | Amber `#d4a04a` |
+| **Fun** | Sage `#4a7c59` |
 
-**Custom tags** are auto-assigned a color using hash-based selection from a 7-color palette.
+**Custom tags** are auto-assigned a color using hash-based selection from a warm palette.
 
 Tags appear as:
 1. **Badge** on each bookmark item
@@ -108,7 +92,6 @@ Tags appear as:
 5. Visual feedback: dragging item fades, drop target gets dashed border
 
 ---
-
 
 ## 💾 Data Format
 
@@ -140,9 +123,10 @@ Import skips:
 - **URL validation** — uses native `URL` constructor
 - **Duplicate detection** — case-insensitive name or URL match
 - **localStorage safety** — try/catch wrappers
-- **Favicon fallback** — letter badge if image fails
+- **Favicon fallback** — serif letter badge if image fails
 - **Import validation** — filters invalid entries before merge
 - **Confirm dialogs** — prevents accidental deletion
+- **Hidden attribute force** — `[hidden] { display: none !important; }` prevents CSS leaks
 
 ---
 
@@ -151,7 +135,7 @@ Import skips:
 - [ ] **Bookmark folders** — nested categorization
 - [ ] **Cloud sync** — login-based sync across devices
 - [ ] **Bulk select** — multi-delete / multi-tag
-- [ ] **Dark / light theme** toggle
+- [ ] **Dark mode** — inverted warm theme
 - [ ] **Bookmark metadata** — title auto-fetch from URL
 - [ ] **Notes per bookmark** — additional context
 - [ ] **Chrome extension** — right-click to save any page

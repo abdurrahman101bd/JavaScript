@@ -7,7 +7,7 @@
 <h1 align="center">Analog Clock</h1>
 
 <p align="center">
-  A sleek, fully responsive analog clock built with vanilla JavaScript — featuring smooth sweeping hands, neon cyan glow, and a dark glassmorphism aesthetic.
+  A sleek, fully responsive analog clock built with vanilla JavaScript — featuring smooth sweeping hands, editorial serif typography, and a coastal blue aesthetic.
 </p>
 
 <p align="center">
@@ -27,14 +27,16 @@
 - **Smooth sweeping second hand** — `requestAnimationFrame` + millisecond accuracy for 60fps motion
 - **Continuous hour & minute hands** — hands move gradually, not in jumps
 - **SVG clock face** — 12 hour ticks, 60 minute ticks, and 12 numbers (no external image needed)
-- **Neon cyan glow** — clock face, hour ticks, second hand, and center cap all glow softly
-- **Pulsing clock aura** — the outer glow breathes gently for a living feel
-- **Pulsing center cap glow** — radial blur behind the center breathes in and out
-- **Glassmorphism card** — dark frosted glass with a subtle border
-- **Animated gradient top line** — cyan → pink → cyan sweep on the card
-- **Floating glow orbs** — soft ambient background orbs
+- **Coastal editorial aesthetic** — cool blue palette with off-white background
+- **Glow orbs in background** — sky blue top-left + deep navy bottom-right, both animated
+- **Editorial serif numbers** — Fraunces serif for elegant, warm feel
+- **Ink-and-paper hands** — solid black hour hand, blue minute hand, thin red second hand
+- **Corner brackets** — subtle editorial framing detail
+- **Soft paper shadow** — multi-layer blue-tinted shadow under the card
+- **Pulsing center glow** — radial blur behind the center breathes gently
+- **Smooth hover bloom** — clock face gains a subtle blue glow on hover
 - **Fully responsive** — perfect on mobile (320px+), tablet, and desktop
-- **Premium typography** — Orbitron font for the clock numbers
+- **Premium typography** — Fraunces serif + Inter
 
 ---
 
@@ -48,16 +50,32 @@
 
 The continuous hour and minute hands use fractional values so they glide instead of snapping.
 
+### ⏱️ Why `requestAnimationFrame`?
+
+`setInterval` runs every 1000ms, which causes the second hand to **jump** and miss frames. `requestAnimationFrame` syncs with the browser's repaint cycle (~60fps), giving a **buttery smooth sweep** — like a real mechanical watch.
+
+---
+
+## 🐛 Robustness
+
+- **Millisecond precision** — smooth hand motion without visible jumps
+- **Continuous hour hand** — even on the hour, the hand is slightly past the mark
+- **No external images** — SVG clock face is crisp at any DPI
+- **Responsive sizing** — `clamp(240px, 72vw, 340px)` for perfect scaling
+- **No intervals** — entire clock runs on a single `requestAnimationFrame` loop
+- **Corner brackets hidden on mobile** — prevents clutter on small screens
+
 ---
 
 ## 🔮 Future Ideas
 
 - [ ] **Tick sound** — soft click each second via Web Audio API
-- [ ] **Second hand color toggle** — cyan / pink / white
+- [ ] **Second hand color toggle** — red / blue / ink
 - [ ] **Rotating gradient ring** — outer border slowly spins
 - [ ] **Stopwatch overlay** — secondary mode
 - [ ] **Alarm** — set an alarm with browser notification
-- [ ] **Light mode** — currently dark neon only
+- [ ] **Dark mode** — inverted coastal theme
+- [ ] **Custom themes** — switch palettes on the fly
 
 ---
 
