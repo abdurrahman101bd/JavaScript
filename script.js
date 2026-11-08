@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: "Wiki Search",
+    description: "A sleek, fully responsive Wikipedia search app built with vanilla JavaScript — featuring live API queries, skeleton loading, and a warm emerald aesthetic.",
+    thumbnail: "assets/wiki-search.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/wiki-search",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/wiki-search"
+  },{
     title: "GitHub User Finder",
     description: "A sleek, fully responsive GitHub profile explorer built with vanilla JavaScript — featuring a GitHub-native dark theme, recent search history, repo sorting, and pagination.",
     thumbnail: "assets/github-user-finder.png",
