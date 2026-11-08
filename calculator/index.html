@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="output">
+      <div id="history"></div>
+      <div id="result">0</div>
+    </div>
+
+    <button id="clear-button" class="span-two">AC</button>
+    <button id="delete-button">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+        <line x1="18" y1="9" x2="12" y2="15"></line>
+        <line x1="12" y1="9" x2="18" y2="15"></line>
+      </svg>
+    </button>
+    <button id="divide-button" class="operator">÷</button>
+    
+    <button class="number">7</button>
+    <button class="number">8</button>
+    <button class="number">9</button>
+    <button id="multiply-button" class="operator">×</button>
+    
+    <button class="number">4</button>
+    <button class="number">5</button>
+    <button class="number">6</button>
+    <button id="subtract-button" class="operator">−</button>
+    
+    <button class="number">1</button>
+    <button class="number">2</button>
+    <button class="number">3</button>
+    <button id="add-button" class="operator">+</button>
+    
+    <button id="decimal-button">.</button>
+    <button class="number">0</button>
+    <button id="equal-button" class="span-two equal">=</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,5 +1,17 @@
 const projects = [
   {
+    title: "Calculator",
+    description: "A sleek, fully responsive web calculator built with vanilla JavaScript — featuring full arithmetic operations, keyboard support, and a warm emerald aesthetic..",
+    thumbnail: "assets/calculator.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/calculator",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/calculator"
+  },{
+    title: "Travel Slider",
+    description: "A sleek, fully responsive travel carousel built with vanilla JavaScript — featuring a full-screen hero, side previews, smooth transitions, and a warm emerald aesthetic.",
+    thumbnail: "assets/travel-slider.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/travel-slider",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/travel-slider"
+  },{
     title: "Wiki Search",
     description: "A sleek, fully responsive Wikipedia search app built with vanilla JavaScript — featuring live API queries, skeleton loading, and a warm emerald aesthetic.",
     thumbnail: "assets/wiki-search.png",
