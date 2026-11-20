@@ -1,7 +1,13 @@
 const projects = [
   {
+    title: "Age Calculator",
+    description: "A sleek, fully responsive age calculator built with vanilla JavaScript — featuring day/month/year breakdown, total time lived, next birthday countdown, and a warm emerald aesthetic.",
+    thumbnail: "assets/age-calculator.png",
+    live: "https://abdurrahman101bd.github.io/JavaScript/age-calculator",
+    repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/age-calculator"
+  },{
     title: "Calculator",
-    description: "A sleek, fully responsive web calculator built with vanilla JavaScript — featuring full arithmetic operations, keyboard support, and a warm emerald aesthetic..",
+    description: "A sleek, fully responsive web calculator built with vanilla JavaScript — featuring full arithmetic operations, keyboard support, and a warm emerald aesthetic.",
     thumbnail: "assets/calculator.png",
     live: "https://abdurrahman101bd.github.io/JavaScript/calculator",
     repo: "https://github.com/abdurrahman101bd/JavaScript/tree/main/calculator"
